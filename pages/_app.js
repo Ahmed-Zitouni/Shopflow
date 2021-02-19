@@ -2,9 +2,18 @@ import "../styles/globals.css";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-  colors: {
-    primary: "#0070f3",
-  },
+  BoldText: "#2f3337",
+  redText: "#c7202c",
+  lightGrey: "#f5f6f7",
+  mobileS: "(min-width: 322px)",
+  mobileM: "(min-width: 377px)",
+  mobileL: "(min-width: 427px)",
+  tablet: "(min-width: 770px)",
+  laptop: "(min-width: 1026px)",
+  laptopM: "(min-width: 1222px)",
+  laptopL: "(min-width: 1442px)",
+  laptopSL: "(min-width: 1922px)",
+  desktop: "(min-width: 2562px)",
 };
 
 function MyApp({ Component, pageProps }) {

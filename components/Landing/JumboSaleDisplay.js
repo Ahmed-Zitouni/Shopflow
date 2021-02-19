@@ -1,36 +1,28 @@
-import React from "react"
-import Styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-export default function JumboSaleDisplay(props){
-    return(
-        <Wrapper>
-            <Container>
-                <SaleImg 
-                    src={props.imageURL}
-                />
-            </Container>
-        </Wrapper>
-    )
+export default function JumboSaleDisplay({ First, img }) {
+  return (
+    <Wrapper First={First}>
+      <SaleImg src={img} />
+    </Wrapper>
+  );
 }
 
-export const Wrapper = Styled.div`
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding-top:125px;
+const Wrapper = styled.div`
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: ${(props) => (props.First ? "125px" : "0px")};
+  margin-bottom: 50px;
+  max-height: 500px;
 `;
 
-export const Container = Styled.div`
-    width:95%;
-    height:100%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-`;
-
-export const SaleImg = Styled.img`
-    width:100%;
+const SaleImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
 `;

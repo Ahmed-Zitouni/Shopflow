@@ -1,171 +1,115 @@
-import React,{useState,useEffect} from "react"
-import Styled from "styled-components"
+import React, { useState, useEffect } from "react";
+import Styled from "styled-components";
 import {
-    BsSearch,
-    BsFillTagFill,
-    BsFillPersonFill,
-    BsBell
-} from "react-icons/bs"
-import {FiShoppingCart} from "react-icons/fi"
-import Hamburger from 'hamburger-react'
+  BsSearch,
+  BsFillTagFill,
+  BsFillPersonFill,
+  BsBell,
+} from "react-icons/bs";
+import { FiShoppingCart } from "react-icons/fi";
+import Hamburger from "hamburger-react";
 
-export default function Navbar(){
-    const [windowDimension, setWindowDimension] = useState(null);
-    const [isOpen, setOpen] = useState(false)
+export default function Navbar() {
+  const [windowDimension, setWindowDimension] = useState(null);
+  const [isOpen, setOpen] = useState(false);
 
-    useEffect(() => {
-        setWindowDimension(window.innerWidth);
-      }, []);
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     function handleResize() {
-        setWindowDimension(window.innerWidth);
+      setWindowDimension(window.innerWidth);
     }
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-      }, []);
-    
-    const mini = windowDimension <= 800;
-    const isMobile = windowDimension <= 1000;
-    const isTablet = windowDimension <= 1200;
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return(
-        <Wrapper>
-            <Container>
-                {isOpen ?
-                    <MobileContainer>
-                        <MobileSelect>
-                            <MobileLogo>
-                                
-                            </MobileLogo>
-                            <Heading>
+  const mini = windowDimension <= 800;
+  const isMobile = windowDimension <= 1000;
+  const isTablet = windowDimension <= 1200;
 
-                            </Heading>
-                            <Category>
+  return (
+    <Wrapper>
+      <Container>
+        {isOpen ? (
+          <MobileContainer>
+            <MobileSelect>
+              <MobileLogo></MobileLogo>
+              <Heading></Heading>
+              <Category></Category>
+            </MobileSelect>
+            <Shadow></Shadow>
+          </MobileContainer>
+        ) : null}
+        <TopNav>
+          {isMobile && <Hamburger toggled={isOpen} toggle={setOpen} />}
+          {!mini && <Logo>Overstock</Logo>}
+          <SearchBar>
+            <Search type="text" placeholder="Search" />
+            <SBtn>
+              <BsSearch />
+            </SBtn>
+          </SearchBar>
+          <NavIcons>
+            {!mini ? (
+              <IconDiv>
+                <Icon href="#">
+                  <BsFillTagFill />
+                </Icon>
 
-                            </Category>
-                        </MobileSelect>
-                        <Shadow>
-
-                        </Shadow>
-                    </MobileContainer>
-                :null}
-                <TopNav>
-                    {isMobile && <Hamburger toggled={isOpen} toggle={setOpen} /> }
-                    {!mini &&
-                        <Logo>
-                            Overstock
-                        </Logo>
-                    }
-                    <SearchBar>
-                        <Search type="text" placeholder="Search"/>
-                        <SBtn>
-                            <BsSearch />
-                        </SBtn>
-                    </SearchBar>
-                    <NavIcons>
-                        {
-                        !mini ?
-                            <IconDiv>
-                                <Icon href="#">
-                                    <BsFillTagFill />
-                                </Icon>
-                                
-                                {
-                                !isTablet ?
-                                    <IconText href="#">
-                                        Deals
-                                    </IconText>
-                                :null
-                                }
-                            </IconDiv>
-                        :null
-                        }
-                        {
-                        !isTablet ?
-                            <IconDiv>
-                                <Icon href="#">
-                                    <BsFillPersonFill />
-                                </Icon>
-                                <IconText href="#">
-                                    Account
-                                </IconText>
-                            </IconDiv>
-                        :null
-                        }
-                        {
-                        !mini ?
-                            <IconDiv>
-                                <Icon href="#">
-                                    <BsBell />
-                                </Icon>
-                                {
-                                !isTablet ?
-                                    <IconText href="#">
-                                        Notifications
-                                    </IconText>
-                                :null
-                                }
-                            </IconDiv>
-                        :null
-                        }
-                        <IconDiv>
-                            <Icon href="#">
-                                <FiShoppingCart />
-                            </Icon>
-                            {
-                            !isTablet ?
-                                <IconText href="#">
-                                    Cart
-                                </IconText>
-                            :null
-                            }
-                        </IconDiv>
-                    </NavIcons>
-                </TopNav>
-                {
-                !isMobile ?
-                    <Categories>
-                        <Item>
-                            <ItemLink href="#">
-                                Furniture
-                            </ItemLink>
-                            <HoverDiv>
-
-                            </HoverDiv>
-                        </Item>
-                        <Item>
-                            <ItemLink href="#">
-                                Rugs
-                            </ItemLink>
-                            <HoverDiv>
-
-                            </HoverDiv>
-                        </Item>
-                        <Item>
-                            <ItemLink href="#">
-                                Decor
-                            </ItemLink>
-                            <HoverDiv>
-
-                            </HoverDiv>
-                        </Item>
-                        <Item>
-                            <ItemLink href="#">
-                                Bedroom
-                            </ItemLink>
-                            <HoverDiv>
-
-                            </HoverDiv>
-                        </Item>
-                    </Categories>
-                :null
-                }
-            </Container>
-        </Wrapper>
-    )
+                {!isTablet ? <IconText href="#">Deals</IconText> : null}
+              </IconDiv>
+            ) : null}
+            {!isTablet ? (
+              <IconDiv>
+                <Icon href="#">
+                  <BsFillPersonFill />
+                </Icon>
+                <IconText href="#">Account</IconText>
+              </IconDiv>
+            ) : null}
+            {!mini ? (
+              <IconDiv>
+                <Icon href="#">
+                  <BsBell />
+                </Icon>
+                {!isTablet ? <IconText href="#">Notifications</IconText> : null}
+              </IconDiv>
+            ) : null}
+            <IconDiv>
+              <Icon href="#">
+                <FiShoppingCart />
+              </Icon>
+              {!isTablet ? <IconText href="#">Cart</IconText> : null}
+            </IconDiv>
+          </NavIcons>
+        </TopNav>
+        {!isMobile ? (
+          <Categories>
+            <Item>
+              <ItemLink href="#">Furniture</ItemLink>
+              <HoverDiv></HoverDiv>
+            </Item>
+            <Item>
+              <ItemLink href="#">Rugs</ItemLink>
+              <HoverDiv></HoverDiv>
+            </Item>
+            <Item>
+              <ItemLink href="#">Decor</ItemLink>
+              <HoverDiv></HoverDiv>
+            </Item>
+            <Item>
+              <ItemLink href="#">Bedroom</ItemLink>
+              <HoverDiv></HoverDiv>
+            </Item>
+          </Categories>
+        ) : null}
+      </Container>
+    </Wrapper>
+  );
 }
-export const Wrapper = Styled.div`
+const Wrapper = Styled.div`
     width:100%;
     height:125px;
     display:flex;
@@ -176,7 +120,7 @@ export const Wrapper = Styled.div`
     background:white;
 `;
 
-export const Container = Styled.div`
+const Container = Styled.div`
     width:100%;
     height:125px;
     display:flex;
@@ -185,38 +129,38 @@ export const Container = Styled.div`
     align-items:center;
 `;
 
-export const MobileContainer = Styled.div`
+const MobileContainer = Styled.div`
     width:100%;
     height:100%
     display:flex;
     flex-direction:row;
 `;
 
-export const MobileSelect = Styled.div`
+const MobileSelect = Styled.div`
     position:absolute;
     width:45%;
     height:100%;
 `;
 
-export const MobileLogo = Styled.div`
+const MobileLogo = Styled.div`
 
 `;
 
-export const Heading = Styled.div`
+const Heading = Styled.div`
 
 `;
 
-export const Category = Styled.div`
+const Category = Styled.div`
 
 `;
 
-export const Shadow = Styled.div`
+const Shadow = Styled.div`
     position:absolute;
     width:55%;
     background:rgba(0,0,0,.15);
 `;
 
-export const TopNav = Styled.div`
+const TopNav = Styled.div`
     width:100%;
     height:100px;
     display:flex;
@@ -226,7 +170,7 @@ export const TopNav = Styled.div`
     border-bottom:1px solid #dadcdf;
 `;
 
-export const Logo = Styled.div`
+const Logo = Styled.div`
     font-size:30px;
     display:flex;
     justify-content:center;
@@ -234,7 +178,7 @@ export const Logo = Styled.div`
     flex-direction:row;
 `;
 
-export const SearchBar = Styled.div`
+const SearchBar = Styled.div`
     width:60%;
     height:35px;
     display:flex;
@@ -243,7 +187,7 @@ export const SearchBar = Styled.div`
     flex-direction:row;
 `;
 
-export const Search = Styled.input`
+const Search = Styled.input`
     width:85%;
     height:25px;
     border: 1px solid #dadcdf;
@@ -253,7 +197,7 @@ export const Search = Styled.input`
     font-size:15px;
 `;
 
-export const SBtn = Styled.button`
+const SBtn = Styled.button`
     height:35px;
     color: white;
     background:red;
@@ -262,7 +206,7 @@ export const SBtn = Styled.button`
     border-bottom-right-radius:5px;
 `;
 
-export const NavIcons = Styled.div`
+const NavIcons = Styled.div`
     width:20%;
     display:flex;
     flex-direction:row;
@@ -270,7 +214,7 @@ export const NavIcons = Styled.div`
     align-items:center;
 `;
 
-export const IconDiv = Styled.div`
+const IconDiv = Styled.div`
     width: 25%;
     height:auto;
     display:flex;
@@ -279,7 +223,7 @@ export const IconDiv = Styled.div`
 
 `;
 
-export const Icon = Styled.a`
+const Icon = Styled.a`
     width:100%;
     height:100%;
     font-size:20px;
@@ -292,7 +236,7 @@ export const Icon = Styled.a`
     }
 `;
 
-export const IconText = Styled.a`
+const IconText = Styled.a`
     width:100%;
     height:100%;
     display:flex;
@@ -302,7 +246,7 @@ export const IconText = Styled.a`
     color: black;
 `;
 
-export const Categories = Styled.div`
+const Categories = Styled.div`
     width:100%;
     height:35px;
     display:flex;
@@ -312,7 +256,7 @@ export const Categories = Styled.div`
     border-bottom:1px solid #dadcdf;
 `;
 
-export const HoverDiv = Styled.div`
+const HoverDiv = Styled.div`
     width:400px;
     height:200px;
     position:absolute;
@@ -321,7 +265,7 @@ export const HoverDiv = Styled.div`
     display:none;
 `;
 
-export const Item = Styled.div`
+const Item = Styled.div`
     width:50px;
     height:35px;
     display:flex;
@@ -336,7 +280,7 @@ export const Item = Styled.div`
     }
 `;
 
-export const ItemLink = Styled.a`
+const ItemLink = Styled.a`
     text-decoration:none;
     color: black;
 `;
