@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 const theme = {
   BoldText: "#2f3337",
   redText: "#c7202c",
+  red: "#ff1f2c",
   lightGrey: "#f5f6f7",
   mobileS: "(min-width: 322px)",
   mobileM: "(min-width: 377px)",

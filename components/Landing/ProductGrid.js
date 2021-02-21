@@ -87,7 +87,7 @@ const MainCont = styled.div`
   gap: 50px 20px;
   @media ${(props) => props.theme.tablet} {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 50px 20px;
   }
   @media ${(props) => props.theme.laptop} {

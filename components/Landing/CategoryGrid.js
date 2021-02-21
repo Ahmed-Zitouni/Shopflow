@@ -1,38 +1,59 @@
 import React from "react";
 import styled from "styled-components";
-import ProductCard from "./ProductCard";
-import CategoryCard from "./CategoryCard";
+import ShopNowCard from "./ShopNowCard";
+import SaleCard from "./SaleCard";
 
-const CategoryGrid = ({ title, type }) => {
+const CategoryGrid = ({ type }) => {
   const data = [
     {
       name: "Superior 600 Thread Count Deep Pocket Polka Dot",
       price: "Sale: $37.82 - $58.22",
       url: "",
       img:
-        "https://ak1.ostkcdn.com/images/products/30970062/INK-IVY-Lennon-Organic-Cotton-Jacquard-Duvet-Cover-Set-f719d85a-198f-40e0-ba81-fa863f2b9f39_600.jpg?imwidth=320",
+        "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
     },
     {
       name: "Superior 600 Thread Count Deep Pocket Polka Dot",
       price: "Sale: $37.82 - $58.22",
       url: "",
       img:
-        "https://ak1.ostkcdn.com/images/products/30970062/INK-IVY-Lennon-Organic-Cotton-Jacquard-Duvet-Cover-Set-f719d85a-198f-40e0-ba81-fa863f2b9f39_600.jpg?imwidth=320",
+        "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
     },
     {
       name: "Superior 600 Thread Count Deep Pocket Polka Dot",
       price: "Sale: $37.82 - $58.22",
       url: "",
       img:
-        "https://ak1.ostkcdn.com/images/products/30970062/INK-IVY-Lennon-Organic-Cotton-Jacquard-Duvet-Cover-Set-f719d85a-198f-40e0-ba81-fa863f2b9f39_600.jpg?imwidth=320",
+        "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
+    },
+  ];
+  const saleData = [
+    {
+      url: "",
+      img: "https://ak1.ostkcdn.com/img/mxc/sales_deals_20200819.svg",
+    },
+    {
+      url: "",
+      img: "https://ak1.ostkcdn.com/img/mxc/20200824-flash-deals-logo.svg",
+    },
+    {
+      url: "",
+      img: "https://ak1.ostkcdn.com/img/mxc/clearance_logo_20200819.svg",
     },
   ];
   return (
     <Wrapper>
       <MainCont>
-        {type === "PRODUCT" && data.map((info) => <ProductCard data={info} />)}
-        {type === "CATEGORY" &&
-          data.map((info) => <CategoryCard data={info} />)}
+        {type === "SHOPNOW" &&
+          data.map((info) => <ShopNowCard data={info} mb={"50px"} />)}
+        {type === "SALE" &&
+          saleData.map((info, i) => (
+            <SaleCard
+              data={info}
+              mb={"10px"}
+              last={i === saleData.length - 1}
+            />
+          ))}
       </MainCont>
     </Wrapper>
   );
@@ -44,31 +65,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-  margin-bottom: 100px;
-`;
-const Header = styled.div`
-  display: flex;
-  padding-bottom: 70px;
-  justify-content: center;
-`;
-const H2 = styled.h2`
-  font-size: 38px;
-  font-weight: 500;
+  margin: 0px -8px;
+  margin-bottom: 50px;
 `;
 const MainCont = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 50px 20px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
   @media ${(props) => props.theme.tablet} {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 50px 20px;
-  }
-  @media ${(props) => props.theme.laptop} {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 0px 20px;
+    flex-wrap: nowrap;
   }
 `;
