@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Overview() {
+export default function Overview({ data }) {
   return (
     <Wrapper>
       <Container>
@@ -11,15 +11,7 @@ export default function Overview() {
             <Description__Title>Description</Description__Title>
             <Description>
               <MiniTitle>Details:</MiniTitle>
-              <MiniText>
-                Make over your beds for seasonal decorating or arriving guests
-                using this four-piece bed sheet set. This set includes
-                pillowcases, a flat sheet, and a fitted sheet to cover your
-                basic bedding needs. Fade- and wrinkle-resistant 90 GSM
-                microfiber stays fresh-looking year-round, offering a
-                luxuriously soft, antimicrobial, and hypoallergenic option for
-                your family.
-              </MiniText>
+              <MiniText>{data.description}</MiniText>
             </Description>
           </Column>
           <Column>
@@ -30,7 +22,7 @@ export default function Overview() {
                   <Text>Item #</Text>
                 </Property>
                 <Value>
-                  <Text>16437098</Text>
+                  <Text>{"000000" + data.id}</Text>
                 </Value>
               </Row>
               <Row>

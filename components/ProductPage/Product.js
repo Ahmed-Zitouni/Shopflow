@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ImageGallery from "react-image-gallery";
-import theme from "../../pages/_app";
 
-export default function Product() {
-  const [size, updateSize] = useState();
-  const [color, updateColor] = useState();
-  const [quantity, updateQuantity] = useState(1);
-  const [showColor, updateShowColor] = useState(false);
+function Product({ data }) {
+  const [size, setSize] = useState();
+  const [color, setColor] = useState();
+  const [quantity, setQuantity] = useState(1);
+  const [showColor, setShowColor] = useState(false);
   const productURL =
     "https://ak1.ostkcdn.com/images/products/9273417/Becky-Cameron-Luxury-Ultra-Soft-4-piece-Bed-Sheet-Set-09df3c6e-276b-4f61-afe4-0c0328d63570_600.jpg";
 
@@ -37,7 +36,6 @@ export default function Product() {
         "https://ak1.ostkcdn.com/images/products/9273417/Becky-Cameron-Luxury-Ultra-Soft-4-piece-Bed-Sheet-Set-c5400fec-a3e3-4f35-abbb-01a63a18e263_80.jpg",
     },
   ];
-
   return (
     <Wrapper>
       <Container>
@@ -50,28 +48,31 @@ export default function Product() {
           />
         </Gallery>
         <Details>
-          <Product__Name>
-            Becky Cameron Luxury Ultra Soft 4-piece Bed Sheet Set - Twin - Navy
-          </Product__Name>
-          <Product__Price>$24.28</Product__Price>
-          <Size>
-            <SubTitle>Size: {size}</SubTitle>
-            <ButtonCont>
-              <Button value="Queen" onclick={() => updateSize("Queen")}>
-                Queen
-              </Button>
-              <Button value="King" onclick={() => updateSize("King")}>
-                King
-              </Button>
-            </ButtonCont>
-          </Size>
+          <Product__Name>{data.name}</Product__Name>
+          <Product__Price>${data.price}</Product__Price>
+          {data.sizes.length > 0 && (
+            <Size>
+              <SubTitle>Size: {size}</SubTitle>
+              <ButtonCont>
+                {data.sizes.map((info) => (
+                  <Button
+                    selected={size === info}
+                    value={info}
+                    key={info}
+                    onclick={() => setSize(info)}
+                  >
+                    {info}
+                  </Button>
+                ))}
+              </ButtonCont>
+            </Size>
+          )}
           <Color>
             <SubTitle>Color: {color}</SubTitle>
             <Select>
-              <Option>Blue</Option>
-              <Option>Black</Option>
-              <Option>Brown</Option>
-              <Option>White</Option>
+              {data.color.map((info) => (
+                <Option>{info.name}</Option>
+              ))}
             </Select>
           </Color>
           <Quantity>
@@ -95,7 +96,7 @@ export default function Product() {
     </Wrapper>
   );
 }
-
+export default Product;
 const Wrapper = styled.div`
   width: 100%;
   height: auto;

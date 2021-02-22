@@ -1,20 +1,40 @@
 import React, { useState, useEffect } from "react";
 import Styled from "styled-components";
-import {
-  BsSearch,
-  BsFillTagFill,
-  BsFillPersonFill,
-  BsBell,
-} from "react-icons/bs";
-import { FiShoppingCart } from "react-icons/fi";
-import Hamburger from "hamburger-react";
+import { FiMenu } from "react-icons/fi";
+import SearchBar from "./NavBar/SearchBar";
+import NavOption from "./NavBar/NavOption";
+import SideMenu from "./NavBar/SideMenu";
 
 export default function Navbar() {
   const [windowDimension, setWindowDimension] = useState(null);
   const [isOpen, setOpen] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
+  useEffect(function onFirstMount() {
+    function onScroll(text) {
+      let innerWidth = text.srcElement.window.innerWidth;
+      console.log("th ", text.srcElement.window.innerWidth, isTablet);
+      if (innerWidth < 970 && isTablet === false) {
+        setIsTablet(true);
+        console.log("trueo");
+      }
+      if (innerWidth > 970 && isTablet === true) {
+        setIsTablet(false);
+        console.log("falso");
+      }
+      if (innerWidth < 540 && !isMobile) {
+        setIsMobile(true);
+        console.log("trueo");
+      }
+      if (innerWidth > 540 && isMobile) {
+        setIsMobile(false);
+        console.log("falso");
+      }
+    }
+
+    window.addEventListener("resize", onScroll);
   }, []);
 
   useEffect(() => {
@@ -25,262 +45,137 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const mini = windowDimension <= 800;
-  const isMobile = windowDimension <= 1000;
-  const isTablet = windowDimension <= 1200;
+  const onOpenMenu = () => {
+    setOpenMenu(true);
+    console.log("open", openMenu);
+  };
+
+  const closeMenu = () => {
+    setOpenMenu(false);
+  };
 
   return (
     <Wrapper>
+      {/* <NavsWrapper> */}
       <Container>
-        {isOpen ? (
-          <MobileContainer>
-            <MobileSelect>
-              <MobileLogo></MobileLogo>
-              <Heading></Heading>
-              <Category></Category>
-            </MobileSelect>
-            <Shadow></Shadow>
-          </MobileContainer>
-        ) : null}
-        <TopNav>
-          {isMobile && <Hamburger toggled={isOpen} toggle={setOpen} />}
-          {!mini && <Logo>Overstock</Logo>}
-          <SearchBar>
-            <Search type="text" placeholder="Search" />
-            <SBtn>
-              <BsSearch />
-            </SBtn>
-          </SearchBar>
-          <NavIcons>
-            {!mini ? (
-              <IconDiv>
-                <Icon href="#">
-                  <BsFillTagFill />
-                </Icon>
-
-                {!isTablet ? <IconText href="#">Deals</IconText> : null}
-              </IconDiv>
-            ) : null}
-            {!isTablet ? (
-              <IconDiv>
-                <Icon href="#">
-                  <BsFillPersonFill />
-                </Icon>
-                <IconText href="#">Account</IconText>
-              </IconDiv>
-            ) : null}
-            {!mini ? (
-              <IconDiv>
-                <Icon href="#">
-                  <BsBell />
-                </Icon>
-                {!isTablet ? <IconText href="#">Notifications</IconText> : null}
-              </IconDiv>
-            ) : null}
-            <IconDiv>
-              <Icon href="#">
-                <FiShoppingCart />
-              </Icon>
-              {!isTablet ? <IconText href="#">Cart</IconText> : null}
-            </IconDiv>
-          </NavIcons>
-        </TopNav>
-        {!isMobile ? (
-          <Categories>
-            <Item>
-              <ItemLink href="#">Furniture</ItemLink>
-              <HoverDiv></HoverDiv>
-            </Item>
-            <Item>
-              <ItemLink href="#">Rugs</ItemLink>
-              <HoverDiv></HoverDiv>
-            </Item>
-            <Item>
-              <ItemLink href="#">Decor</ItemLink>
-              <HoverDiv></HoverDiv>
-            </Item>
-            <Item>
-              <ItemLink href="#">Bedroom</ItemLink>
-              <HoverDiv></HoverDiv>
-            </Item>
-          </Categories>
-        ) : null}
+        <SideMenu isOpen={openMenu} onClose={() => closeMenu()} />
+        <MenuIcon onClick={() => setOpenMenu(true)}>
+          {" "}
+          <FiMenu />{" "}
+        </MenuIcon>
+        <LogoTag>
+          <SmallLogo src={"/Overstock_Icon.svg"} />
+          <Logo src={"/Overstock_Logo.svg"} />
+        </LogoTag>
+        <SearchBar />
+        <Options>
+          <NavOption type="Try" isTablet={isTablet} />
+          {/* <NavOption type="account" isTablet={isTablet} /> */}
+          <NavOption type="bell" isTablet={isTablet} isMobile={isMobile} />
+          <NavOption type="cart" isTablet={isTablet} isMobile={isMobile} />
+        </Options>
       </Container>
+      {/* <NavCategories /> */}
+      {/* </NavsWrapper> */}
     </Wrapper>
   );
 }
 const Wrapper = Styled.div`
     width:100%;
-    height:125px;
+    height:67px;
     display:flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items:center;
     position:fixed;
     font-family: 'Helvetica', 'Arial', sans-serif;
-    background:white;
+    background-color:white;
+    /* background: green; */
+    max-width: 1680px;
+    z-index: 1;
+    /* margin: 0 auto; */
+    @media ${(props) => props.theme.tabletL} {
+    height: unset;
+  }
+`;
+
+const NavsWrapper = Styled.div`
+width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 13px;
+    margin-right: 13px;
 `;
 
 const Container = Styled.div`
     width:100%;
-    height:125px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-`;
-
-const MobileContainer = Styled.div`
-    width:100%;
-    height:100%
+    margin-left: 13px;
+    margin-right: 13px;
+    margin: 24px auto;
     display:flex;
     flex-direction:row;
-`;
-
-const MobileSelect = Styled.div`
-    position:absolute;
-    width:45%;
-    height:100%;
-`;
-
-const MobileLogo = Styled.div`
-
-`;
-
-const Heading = Styled.div`
-
-`;
-
-const Category = Styled.div`
-
-`;
-
-const Shadow = Styled.div`
-    position:absolute;
-    width:55%;
-    background:rgba(0,0,0,.15);
-`;
-
-const TopNav = Styled.div`
-    width:100%;
-    height:100px;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #dadcdf;
-`;
+    /* background-color: red; */
+    /* @media ${(props) => props.theme.mobileL} {
 
-const Logo = Styled.div`
-    font-size:30px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:row;
-`;
+margin-left: 25px;
+margin-right: 25px;
+}
+@media ${(props) => props.theme.tablet} {
+    margin-left: 50px;
+    margin-right: 50px;
+  } */
+    @media ${(props) => props.theme.laptop} {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 
-const SearchBar = Styled.div`
-    width:60%;
-    height:35px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:row;
-`;
-
-const Search = Styled.input`
-    width:85%;
-    height:25px;
-    border: 1px solid #dadcdf;
-    border-top-left-radius:5px;
-    border-bottom-left-radius:5px;
-    padding:5px;
-    font-size:15px;
-`;
-
-const SBtn = Styled.button`
-    height:35px;
-    color: white;
-    background:red;
-    font-size:16px;
-    border-top-right-radius:5px;
-    border-bottom-right-radius:5px;
-`;
-
-const NavIcons = Styled.div`
-    width:20%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-`;
-
-const IconDiv = Styled.div`
-    width: 25%;
-    height:auto;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
 
 `;
 
-const Icon = Styled.a`
-    width:100%;
-    height:100%;
-    font-size:20px;
-    display:flex;
-    justify-content:center;
-    text-decoration:none;
-    color: black;
-    @media only screen and (max-width: 1200px){
-        font-size:30px;
-    }
+const LogoTag = Styled.a`
+margin-right: 16px;
 `;
 
-const IconText = Styled.a`
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    font-size:14px;
-    text-decoration:none;
-    color: black;
+const Logo = Styled.img`
+width: 170px;
+color: red;
+display: none;
+/* margin-left: 20px; */
+@media ${(props) => props.theme.tabletL} {
+        display: flex;
+        font-size: 40px;
+        justify-content: space-between;
+}
 `;
 
-const Categories = Styled.div`
-    width:100%;
-    height:35px;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-    border-bottom:1px solid #dadcdf;
+const SmallLogo = Styled.img`
+width: 35px;
+color: red;
+display: flex;
+@media ${(props) => props.theme.tabletL} {
+        display: flex;
+        font-size: 40px;
+        justify-content: space-between;
+        display: none;
+}
 `;
 
-const HoverDiv = Styled.div`
-    width:400px;
-    height:200px;
-    position:absolute;
-    background:black;
-    top:125px;
-    display:none;
+const Options = Styled.div`
+display: flex;
+    transition: transform .15s ease-in-out;
+    box-sizing: border-box;
+    position: relative;
 `;
 
-const Item = Styled.div`
-    width:50px;
-    height:35px;
-    display:flex;
-    flex-direction:row;
-    
-    align-items:center;
-    margin:0 40px;
-    &:hover{
-        ${HoverDiv}{
-            display:flex;
-        }
-    }
-`;
-
-const ItemLink = Styled.a`
-    text-decoration:none;
-    color: black;
+const MenuIcon = Styled.a`
+font-size: 30px;
+margin-right: 12px;
+display: flex;
+cursor: pointer;
+@media ${(props) => props.theme.tabletL} {
+        display: none;
+}
 `;
