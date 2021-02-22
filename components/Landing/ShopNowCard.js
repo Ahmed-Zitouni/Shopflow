@@ -1,17 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const ShopNowCard = ({ data, mb }) => {
   return (
-    <Wrapper mb={mb}>
-      <ImgCont>
-        <Img src={data.img} />
-      </ImgCont>
-      <TextCont>
-        <H2>{data.price}</H2>
-        <P>{data.name}</P>
-      </TextCont>
-    </Wrapper>
+    <Link href={"/category/" + data.id} passHref>
+      <Wrapper mb={mb}>
+        <ImgCont>
+          <Img src={data.img[0]} />
+        </ImgCont>
+        <TextCont>
+          <H2>${data.price}</H2>
+          <P>{data.name}</P>
+        </TextCont>
+      </Wrapper>
+    </Link>
   );
 };
 
@@ -27,13 +30,17 @@ const Wrapper = styled.a`
   padding: 0px 8px;
   margin-bottom: ${(props) => props.mb};
   cursor: pointer;
+  color: inherit;
+  text-decoration: none;
   @media ${(props) => props.theme.tablet} {
     width: 33.33%;
     margin-bottom: 0px;
+    padding: 0px 16px;
   }
 `;
 const ImgCont = styled.div`
   width: 100%;
+  height: 100%;
   overflow: hidden;
 `;
 const Img = styled.img`
@@ -45,7 +52,7 @@ const Img = styled.img`
   }
 `;
 const H2 = styled.h2`
-  font-size: 20px;
+  font-size: 22px;
   padding-bottom: 10px;
 `;
 const P = styled.p`

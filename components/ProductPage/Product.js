@@ -15,7 +15,7 @@ function Product({ data }) {
       original:
         "https://ak1.ostkcdn.com/images/products/9273417/Becky-Cameron-Luxury-Ultra-Soft-4-piece-Bed-Sheet-Set-09df3c6e-276b-4f61-afe4-0c0328d63570_600.jpg",
       thumbnail:
-        "https://ak1.ostkcdn.com/images/products/9273417/Becky-Cameron-Luxury-Ultra-Soft-4-piece-Bed-Sheet-Set-09df3c6e-276b-4f61-afe4-0c0328d63570_80.jpg",
+        "https://ak1.ostkcdn.com/images/products/9273417/Becky-Cameron-Luxury-Ultra-Soft-4-piece-Bed-Sheet-Set-09df3c6e-276b-4f61-afe4-0c0328d63570_600.jpg",
     },
     {
       original:
@@ -36,6 +36,9 @@ function Product({ data }) {
         "https://ak1.ostkcdn.com/images/products/9273417/Becky-Cameron-Luxury-Ultra-Soft-4-piece-Bed-Sheet-Set-c5400fec-a3e3-4f35-abbb-01a63a18e263_80.jpg",
     },
   ];
+  // items={images.map((info) => {
+  //   return { original: info, thumbnail: info };
+  // })}
   return (
     <Wrapper>
       <Container>
@@ -116,6 +119,7 @@ const Container = styled.div`
   justify-content: space-between;
   @media ${(props) => props.theme.tablet} {
     flex-direction: row;
+    align-items: flex-start;
   }
 `;
 

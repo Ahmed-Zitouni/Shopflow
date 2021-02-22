@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { RiArrowDownSFill } from "react-icons/ri";
 import Product from "./Product";
+
 export default function ProductsGrid(props) {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    console.log("changed", props.data);
     setFilteredData(props.data);
   }, [props.sort, props.data]);
 

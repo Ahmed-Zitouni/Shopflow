@@ -3,30 +3,30 @@ import styled from "styled-components";
 import ShopNowCard from "./ShopNowCard";
 import SaleCard from "./SaleCard";
 
-const CategoryGrid = ({ type }) => {
-  const data = [
-    {
-      name: "Superior 600 Thread Count Deep Pocket Polka Dot",
-      price: "Sale: $37.82 - $58.22",
-      url: "",
-      img:
-        "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
-    },
-    {
-      name: "Superior 600 Thread Count Deep Pocket Polka Dot",
-      price: "Sale: $37.82 - $58.22",
-      url: "",
-      img:
-        "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
-    },
-    {
-      name: "Superior 600 Thread Count Deep Pocket Polka Dot",
-      price: "Sale: $37.82 - $58.22",
-      url: "",
-      img:
-        "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
-    },
-  ];
+const CategoryGrid = ({ type, data }) => {
+  // const data = [
+  //   {
+  //     name: "Superior 600 Thread Count Deep Pocket Polka Dot",
+  //     price: "Sale: $37.82 - $58.22",
+  //     url: "",
+  //     img:
+  //       "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
+  //   },
+  //   {
+  //     name: "Superior 600 Thread Count Deep Pocket Polka Dot",
+  //     price: "Sale: $37.82 - $58.22",
+  //     url: "",
+  //     img:
+  //       "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
+  //   },
+  //   {
+  //     name: "Superior 600 Thread Count Deep Pocket Polka Dot",
+  //     price: "Sale: $37.82 - $58.22",
+  //     url: "",
+  //     img:
+  //       "https://ak1.ostkcdn.com/img/mxc/02162021-3MOD_528x370_BathroomMakeover.jpg",
+  //   },
+  // ];
   const saleData = [
     {
       url: "",
@@ -67,6 +67,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   margin: 0px -8px;
   margin-bottom: 50px;
+  @media ${(props) => props.theme.tablet} {
+    margin: 0px -16px;
+    margin-bottom: 50px;
+  }
 `;
 const MainCont = styled.div`
   display: flex;

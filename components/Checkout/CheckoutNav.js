@@ -38,6 +38,9 @@ export const Container = styled.div`
     align-items:center;
     flex-direction:row;
     border-bottom:1px solid #dadcdf;
+    @media (max-width:1200px){
+        width:100%;
+    }
 `;
 
 export const Logo = styled.div`

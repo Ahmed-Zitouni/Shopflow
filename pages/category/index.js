@@ -3,9 +3,21 @@ import PageLayout from "../../components/PageLayout";
 import styled from "styled-components";
 import Header from "../../components/Collection/Header";
 import MainSection from "../../components/Collection/MainSection";
+import { useRouter } from "next/router";
+
 export default function Collection({}) {
+  const { query } = useRouter();
+  console.log(query);
+  const urlq = {
+    Rugs: "Rugs",
+    BedNBath: "Bed & Bath",
+    Kitchen: "Kitchen",
+    Decor: "Decor",
+    HomeImprovement: "Home Improvement",
+  };
   const [sort, setSort] = useState("");
-  const [group, setGroup] = useState("Bed & Bath");
+  const [group, setGroup] = useState(urlq[query?.type] || "Bed & Bath");
+
   return (
     <PageLayout>
       <Wrapper>

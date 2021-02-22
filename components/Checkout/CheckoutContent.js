@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react"
+import React,{useState,useEffect,} from "react"
 import styled from "styled-components"
 import CartDisplay from "./CartDisplay"
 import CheckoutForm from "./CheckoutForm"
@@ -116,7 +116,7 @@ export default function CheckoutContent(){
                                         ${(TotalPrice*.1).toFixed(2)}
                                     </Text>
                                 </Row>
-                                <Button>
+                                <Button form="my-form" type="submit">
                                     Submit Order
                                 </Button>
                             </Bottom>
@@ -143,15 +143,27 @@ export const Container = styled.div`
     justify-content:center;
     align-items:center;
     flex-direction:row;
+    @media (max-width:1200px){
+        width:80%;
+        flex-direction:column;
+    }
 `;
 
 export const Col1 = styled.div`
     width:60%;
+    @media (max-width:1200px){
+        width:100%;
+    }
 `;
 
 export const Col2 = styled.div`
     width:40%;
     height:100%;
+    @media (max-width:1200px){
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
 `;
 
 export const Wrap = styled.div`
@@ -161,6 +173,13 @@ export const Wrap = styled.div`
     margin-left:40px;
     position:fixed;
     top:183px;
+    @media (max-width:1200px){
+        position:relative;
+        width:100%;
+        height:100%;
+        top:-100px;
+        margin-right:25px;
+    }
 `;
 
 export const Checkout = styled.div`

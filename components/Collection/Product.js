@@ -6,14 +6,10 @@ import { FaShippingFast } from "react-icons/fa";
 export default function Product({ data }) {
   const [image, setImage] = useState("");
   const href = window.location.href;
-  useEffect(() => {
-    let img = data.color[0]?.img[0];
-    setImage(img);
-  }, [data]);
 
   return (
     <Wrapper href={href + "/" + data.id}>
-      <Image src={image} />
+      <Image src={data?.img[0]} />
       <Container>
         <InnerContainer>
           <Tag>Featured</Tag>

@@ -8,23 +8,15 @@ export const AllProducts = [
     rating: 4.1,
     price: 95.98,
     sizes: ["King", "Queen"],
-    color: [
-      {
-        name: "Ivory",
-        img: [
-          "https://i.ibb.co/C9WmSDb/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-3.jpg",
-          "https://i.ibb.co/KjxRpXg/31h5jn1j2n3ndbgqf1t3.webp",
-          "https://i.ibb.co/hZVzR3r/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-4.jpg",
-        ],
-      },
-      {
-        name: "Gray",
-        img: [
-          "https://i.ibb.co/x1MxLcd/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-1.jpg",
-          "https://i.ibb.co/ykwLknL/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set.jpg",
-          "https://i.ibb.co/2n7QLTp/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-2.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["Ivory", "Gray"],
+    img: [
+      "https://i.ibb.co/C9WmSDb/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-3.jpg",
+      "https://i.ibb.co/hmxyQ9d/31h5jn1j2n3ndbgqf1t3.jpg",
+      "https://i.ibb.co/hZVzR3r/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-4.jpg",
+      "https://i.ibb.co/x1MxLcd/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-1.jpg",
+      "https://i.ibb.co/ykwLknL/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set.jpg",
+      "https://i.ibb.co/2n7QLTp/The-Curated-Nomad-Clementina-Cotton-Printed-Chenille-Comforter-Set-2.jpg",
     ],
   },
   {
@@ -37,21 +29,13 @@ export const AllProducts = [
     rating: 4.6,
     price: 54.32,
     sizes: ["40x60-10lb", "40x60-7lb"],
-    color: [
-      {
-        name: "Light Grey",
-        img: [
-          "https://i.ibb.co/3f1WPwx/n20gnhgn0s999.jpg",
-          "https://i.ibb.co/tZxD4Cz/29jg40gj4gj20j234.jpg",
-        ],
-      },
-      {
-        name: "Dark Blue",
-        img: [
-          "https://i.ibb.co/MN5tF1V/jg309j43-0g43j-g43.jpg",
-          "https://i.ibb.co/F7WFZq2/bg983gb98gb4g34.jpg",
-        ],
-      },
+    imgNum: 2,
+    color: ["Light Grey", "Dark Blue"],
+    img: [
+      "https://i.ibb.co/3f1WPwx/n20gnhgn0s999.jpg",
+      "https://i.ibb.co/tZxD4Cz/29jg40gj4gj20j234.jpg",
+      "https://i.ibb.co/MN5tF1V/jg309j43-0g43j-g43.jpg",
+      "https://i.ibb.co/F7WFZq2/bg983gb98gb4g34.jpg",
     ],
   },
   {
@@ -64,15 +48,12 @@ export const AllProducts = [
     rating: 4.8,
     price: 393.99,
     sizes: ["Full", "Queen", "King"],
-    color: [
-      {
-        name: "White/Red",
-        img: [
-          "https://i.ibb.co/8NKj3Bp/2b354v7un754b2.jpg",
-          "https://i.ibb.co/tJy4g8j/b474v745v54v45.jpg",
-          "https://i.ibb.co/B3qDsxw/b46747b4vb5.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["White/Red"],
+    img: [
+      "https://i.ibb.co/8NKj3Bp/2b354v7un754b2.jpg",
+      "https://i.ibb.co/tJy4g8j/b474v745v54v45.jpg",
+      "https://i.ibb.co/B3qDsxw/b46747b4vb5.jpg",
     ],
   },
   {
@@ -84,23 +65,15 @@ export const AllProducts = [
     rating: 4.9,
     price: 31.98,
     sizes: ["18x48", "24x60", "20x32"],
-    color: [
-      {
-        name: "Fog",
-        img: [
-          "https://i.ibb.co/qrHyq9R/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-320e883e-b59a-42fe-9553-1e7bce3a4b17-600.jpg",
-          "https://i.ibb.co/fGYDF7P/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-7161b69b-0637-433e-92e8-5b2d3ccea6b4-600.jpg",
-          "https://i.ibb.co/QMb3nJZ/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-20757282-c1d0-4abc-ab58-d68a37f6fd68-600.jpg",
-        ],
-      },
-      {
-        name: "Sand",
-        img: [
-          "https://i.ibb.co/zRSH5nj/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-545bf4a9-9852-41e8-91d2-4ca09afa1dfa-600.jpg",
-          "https://i.ibb.co/Zhb4ZX1/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-36335378-154c-4d73-8a24-920f66a5d845-600.jpg",
-          "https://i.ibb.co/NxYHT1H/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-4686912b-0b43-42f3-8c5e-25a4b2cef6e8-600.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["Fog", "Sand"],
+    img: [
+      "https://i.ibb.co/qrHyq9R/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-320e883e-b59a-42fe-9553-1e7bce3a4b17-600.jpg",
+      "https://i.ibb.co/fGYDF7P/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-7161b69b-0637-433e-92e8-5b2d3ccea6b4-600.jpg",
+      "https://i.ibb.co/QMb3nJZ/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-20757282-c1d0-4abc-ab58-d68a37f6fd68-600.jpg",
+      "https://i.ibb.co/zRSH5nj/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-545bf4a9-9852-41e8-91d2-4ca09afa1dfa-600.jpg",
+      "https://i.ibb.co/Zhb4ZX1/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-36335378-154c-4d73-8a24-920f66a5d845-600.jpg",
+      "https://i.ibb.co/NxYHT1H/The-Welhome-Luxury-Turkish-Cotton-Bath-Rug-4686912b-0b43-42f3-8c5e-25a4b2cef6e8-600.jpg",
     ],
   },
   {
@@ -112,28 +85,15 @@ export const AllProducts = [
     rating: 4.3,
     price: 47.99,
     sizes: ["All Included"],
-    color: [
-      {
-        name: "White",
-        img: [
-          "https://i.ibb.co/sV6k2Ls/bn98bn39b3.jpg",
-          "https://i.ibb.co/Nt5Szdd/b043850v934.jpg",
-        ],
-      },
-      {
-        name: "Navy",
-        img: [
-          "https://i.ibb.co/h71ZJcY/bg93b49b84.jpg",
-          "https://i.ibb.co/jH8d3p0/0v5m30485034c.jpg",
-        ],
-      },
-      {
-        name: "Beige",
-        img: [
-          "https://i.ibb.co/58Y7tzv/4ng309ng309ng.jpg",
-          "https://i.ibb.co/z6gk6Dx/m09f435094394c34.jpg",
-        ],
-      },
+    imgNum: 2,
+    color: ["White", "Navy", "Beige"],
+    img: [
+      "https://i.ibb.co/sV6k2Ls/bn98bn39b3.jpg",
+      "https://i.ibb.co/Nt5Szdd/b043850v934.jpg",
+      "https://i.ibb.co/h71ZJcY/bg93b49b84.jpg",
+      "https://i.ibb.co/jH8d3p0/0v5m30485034c.jpg",
+      "https://i.ibb.co/58Y7tzv/4ng309ng309ng.jpg",
+      "https://i.ibb.co/z6gk6Dx/m09f435094394c34.jpg",
     ],
   },
   {
@@ -145,34 +105,28 @@ export const AllProducts = [
     rating: 4.1,
     price: 99.0,
     sizes: ["5x7in"],
-    color: [
-      {
-        name: "Black",
-        img: [
-          "https://i.ibb.co/NjQ1bXG/v523n05720357823.jpg",
-          "https://i.ibb.co/cKq3gW1/2n84230582n3v8523.jpg",
-        ],
-      },
+    imgNum: 2,
+    color: ["Black"],
+    img: [
+      "https://i.ibb.co/NjQ1bXG/v523n05720357823.jpg",
+      "https://i.ibb.co/cKq3gW1/2n84230582n3v8523.jpg",
     ],
   },
   {
     id: "6",
     name: "LG 21.8-cubic Foot French Door Refrigerator",
     description:
-      "Complete your kitchen with this modern LG 21.8-cubic foot french door refrigerator with 2 adjustable glass shelves. Featuring a silver finish that will complement any interior decor, this refrigerator measures 35.5 inches deep to accommodate any need.",
+      "Complete your kitchen with this modern LG french door refrigerator with 2 adjustable glass shelves. Featuring a silver finish that will complement any interior decor, this refrigerator measures 35.5 inches deep to accommodate any need.",
     brand: "LG",
     rating: 4.8,
     price: 1609.99,
-    sizes: [""],
-    color: [
-      {
-        name: "Light Gray",
-        img: [
-          "https://i.ibb.co/kgwvtxG/v340958vm340534.jpg",
-          "https://i.ibb.co/C7Kb3ht/5v-0293509n3c2750923.jpg",
-          "https://i.ibb.co/gS1n7xL/573v985n732v2.jpg",
-        ],
-      },
+    sizes: ["21.8-cubic foot"],
+    imgNum: 3,
+    color: ["Light Gray"],
+    img: [
+      "https://i.ibb.co/kgwvtxG/v340958vm340534.jpg",
+      "https://i.ibb.co/C7Kb3ht/5v-0293509n3c2750923.jpg",
+      "https://i.ibb.co/gS1n7xL/573v985n732v2.jpg",
     ],
   },
   {
@@ -184,15 +138,12 @@ export const AllProducts = [
     rating: 4.4,
     price: 25.49,
     sizes: ["10", "11", "12"],
-    color: [
-      {
-        name: "Black",
-        img: [
-          "https://i.ibb.co/zR5SnwB/gg2o9ui3gn2g.jpg",
-          "https://i.ibb.co/jT7nHD4/ng024g092ghn23.jpg",
-          "https://i.ibb.co/3vKwXhV/g24809h208239.jpg",
-        ],
-      },
+    color: ["Black"],
+    imgNum: 3,
+    img: [
+      "https://i.ibb.co/zR5SnwB/gg2o9ui3gn2g.jpg",
+      "https://i.ibb.co/jT7nHD4/ng024g092ghn23.jpg",
+      "https://i.ibb.co/3vKwXhV/g24809h208239.jpg",
     ],
   },
   {
@@ -204,15 +155,12 @@ export const AllProducts = [
     rating: 5.0,
     price: 2282.49,
     sizes: ["30"],
-    color: [
-      {
-        name: "Stainless Steel",
-        img: [
-          "https://i.ibb.co/6y7Bmn3/n3240923709cm2323.jpg",
-          "https://i.ibb.co/S7rJz2k/mv53485093v34.jpg",
-          "https://i.ibb.co/Xj3ssZ6/h5b395-23-5v23.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["Stainless Steel"],
+    img: [
+      "https://i.ibb.co/6y7Bmn3/n3240923709cm2323.jpg",
+      "https://i.ibb.co/S7rJz2k/mv53485093v34.jpg",
+      "https://i.ibb.co/Xj3ssZ6/h5b395-23-5v23.jpg",
     ],
   },
   {
@@ -224,16 +172,13 @@ export const AllProducts = [
     rating: 5.0,
     price: 171.49,
     sizes: ["Service for 12"],
-    color: [
-      {
-        name: "Stainless Steel",
-        img: [
-          "https://i.ibb.co/VthR8vH/fwefwefwfwagw.jpg",
-          "https://i.ibb.co/zNxLGsC/k-2gm-4g23g2.jpg",
-          "https://i.ibb.co/km02Qyf/2523v235235c23.jpg",
-          "https://i.ibb.co/Vqkt33v/5v34534b6346b34.jpg",
-        ],
-      },
+    imgNum: 4,
+    color: ["Stainless Steel"],
+    img: [
+      "https://i.ibb.co/VthR8vH/fwefwefwfwagw.jpg",
+      "https://i.ibb.co/zNxLGsC/k-2gm-4g23g2.jpg",
+      "https://i.ibb.co/km02Qyf/2523v235235c23.jpg",
+      "https://i.ibb.co/Vqkt33v/5v34534b6346b34.jpg",
     ],
   },
   {
@@ -245,23 +190,13 @@ export const AllProducts = [
     rating: 4.0,
     price: 38.99,
     sizes: ["W75 x L110"],
-    color: [
-      {
-        name: "Taupe",
-        img: ["https://i.ibb.co/s9sxYY5/v235n0982c203.jpg"],
-      },
-      {
-        name: "Blue",
-        img: ["https://i.ibb.co/PGR18VN/3m95-3495-345-v34.jpg"],
-      },
-      {
-        name: "Brown",
-        img: ["https://i.ibb.co/v1SN8ny/349gj34tg-304g.jpg"],
-      },
-      {
-        name: "Burgundy",
-        img: ["https://i.ibb.co/K9gjG2K/9m3v94035043mv.jpg"],
-      },
+    imgNum: 1,
+    color: ["Taupe", "Blue", "Brown", "Burgundy"],
+    img: [
+      "https://i.ibb.co/s9sxYY5/v235n0982c203.jpg",
+      "https://i.ibb.co/PGR18VN/3m95-3495-345-v34.jpg",
+      "https://i.ibb.co/v1SN8ny/349gj34tg-304g.jpg",
+      "https://i.ibb.co/K9gjG2K/9m3v94035043mv.jpg",
     ],
   },
   {
@@ -274,15 +209,12 @@ export const AllProducts = [
     rating: 4.6,
     price: 71.49,
     sizes: ["96in", "108in"],
-    color: [
-      {
-        name: "White",
-        img: [
-          "https://i.ibb.co/wy2GQY7/g9348gh82.jpg",
-          "https://i.ibb.co/1ddKJRM/g0gn309gn43.jpg",
-          "https://i.ibb.co/L0yjGN0/gh034nngflh.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["White"],
+    img: [
+      "https://i.ibb.co/wy2GQY7/g9348gh82.jpg",
+      "https://i.ibb.co/1ddKJRM/g0gn309gn43.jpg",
+      "https://i.ibb.co/L0yjGN0/gh034nngflh.jpg",
     ],
   },
   {
@@ -295,15 +227,12 @@ export const AllProducts = [
     rating: 5.0,
     price: 133.02,
     sizes: ["15 X 15 X 28.5"],
-    color: [
-      {
-        name: "Blue",
-        img: [
-          "https://i.ibb.co/ZLfXnvC/2vb75832nc9328.jpg",
-          "https://i.ibb.co/wJGRPqk/mhg43093409g3.jpg",
-          "https://i.ibb.co/5Yx01n1/4tv345um3403.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["Blue"],
+    img: [
+      "https://i.ibb.co/ZLfXnvC/2vb75832nc9328.jpg",
+      "https://i.ibb.co/wJGRPqk/mhg43093409g3.jpg",
+      "https://i.ibb.co/5Yx01n1/4tv345um3403.jpg",
     ],
   },
   {
@@ -315,15 +244,12 @@ export const AllProducts = [
     rating: 4.8,
     price: 572.99,
     sizes: ["47.4L X 9.5W X 41.9H"],
-    color: [
-      {
-        name: "White",
-        img: [
-          "https://i.ibb.co/FwMLnx7/vn2348230c423m8.jpg",
-          "https://i.ibb.co/hVRMnqJ/jg2439-cv2.jpg",
-          "https://i.ibb.co/g9WpD93/48n032cm84023c2.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["White"],
+    img: [
+      "https://i.ibb.co/FwMLnx7/vn2348230c423m8.jpg",
+      "https://i.ibb.co/hVRMnqJ/jg2439-cv2.jpg",
+      "https://i.ibb.co/g9WpD93/48n032cm84023c2.jpg",
     ],
   },
   {
@@ -335,22 +261,12 @@ export const AllProducts = [
     rating: 4.2,
     price: 35.49,
     sizes: ["18x18", "20x20"],
-    color: [
-      {
-        name: "White",
-        img: [
-          "https://i.ibb.co/HFHsqq7/v47239847cn23.jpg",
-          "https://i.ibb.co/YT5Jtrc/v5m043950934.jpg",
-        ],
-      },
-      {
-        name: "Black",
-        img: ["https://i.ibb.co/CMHKcXx/vm359340m895034.jpg"],
-      },
-      {
-        name: "Brown",
-        img: ["https://i.ibb.co/YtVhxVd/v893h9845hv3984.jpg"],
-      },
+    imgNum: 1,
+    color: ["White", "Black", "Brown"],
+    img: [
+      "https://i.ibb.co/HFHsqq7/v47239847cn23.jpg",
+      "https://i.ibb.co/CMHKcXx/vm359340m895034.jpg",
+      "https://i.ibb.co/YtVhxVd/v893h9845hv3984.jpg",
     ],
   },
   {
@@ -362,28 +278,15 @@ export const AllProducts = [
     rating: 4.7,
     price: 22.12,
     sizes: ["2'3x10'Runner", "2'3x18'Runner", "2'3x22'Runner"],
-    color: [
-      {
-        name: "Ivory/Aqua",
-        img: [
-          "https://i.ibb.co/ZBZdwNf/nc72958n7c329753.jpg",
-          "https://i.ibb.co/m5QBVJm/n79vc7239c7523.jpg",
-        ],
-      },
-      {
-        name: "Navy/Teal",
-        img: [
-          "https://i.ibb.co/b1ZpM3t/909534895034.jpg",
-          "https://i.ibb.co/TgmzPL7/g34hg834g9834hg9834.jpg",
-        ],
-      },
-      {
-        name: "Grey/Gold",
-        img: [
-          "https://i.ibb.co/2qFWF4d/4g398gh34g893.jpg",
-          "https://i.ibb.co/D1ztFGD/9g3490gj43.jpg",
-        ],
-      },
+    imgNum: 2,
+    color: ["Ivory/Aqua", "Navy/Teal", "Grey/Gold"],
+    img: [
+      "https://i.ibb.co/ZBZdwNf/nc72958n7c329753.jpg",
+      "https://i.ibb.co/m5QBVJm/n79vc7239c7523.jpg",
+      "https://i.ibb.co/b1ZpM3t/909534895034.jpg",
+      "https://i.ibb.co/TgmzPL7/g34hg834g9834hg9834.jpg",
+      "https://i.ibb.co/2qFWF4d/4g398gh34g893.jpg",
+      "https://i.ibb.co/D1ztFGD/9g3490gj43.jpg",
     ],
   },
   {
@@ -395,28 +298,15 @@ export const AllProducts = [
     rating: 4.7,
     price: 22.12,
     sizes: ["2'3x10'Runner", "2'3x8'Runner", "2'3x11'Runner"],
-    color: [
-      {
-        name: "Dark Blue",
-        img: [
-          "https://i.ibb.co/4PTxHq1/h398h9834.jpg",
-          "https://i.ibb.co/fDysF6z/gj209gj23g.jpg",
-        ],
-      },
-      {
-        name: "Light Blue",
-        img: [
-          "https://i.ibb.co/PgqHJkN/c2398nc923.jpg",
-          "https://i.ibb.co/4s6X9qz/g430gj0349.jpg",
-        ],
-      },
-      {
-        name: "Gray",
-        img: [
-          "https://i.ibb.co/gZx5Z67/h9832hf9823.jpg",
-          "https://i.ibb.co/Tbxkc4Q/934hg983hf.jpg",
-        ],
-      },
+    imgNum: 2,
+    color: ["Dark Blue", "Light Blue", "Gray"],
+    img: [
+      "https://i.ibb.co/4PTxHq1/h398h9834.jpg",
+      "https://i.ibb.co/fDysF6z/gj209gj23g.jpg",
+      "https://i.ibb.co/PgqHJkN/c2398nc923.jpg",
+      "https://i.ibb.co/4s6X9qz/g430gj0349.jpg",
+      "https://i.ibb.co/gZx5Z67/h9832hf9823.jpg",
+      "https://i.ibb.co/Tbxkc4Q/934hg983hf.jpg",
     ],
   },
   {
@@ -428,21 +318,13 @@ export const AllProducts = [
     rating: 4.2,
     price: 173.13,
     sizes: ["4'x6'", "5'x8'"],
-    color: [
-      {
-        name: "Gray",
-        img: [
-          "https://i.ibb.co/j8B1X5M/093j29fj23f23.jpg",
-          "https://i.ibb.co/CB4twK4/gb928hg9238g32.jpg",
-        ],
-      },
-      {
-        name: "Ivory",
-        img: [
-          "https://i.ibb.co/4FbfxWz/gh2389gh2938g.jpg",
-          "https://i.ibb.co/dkT3DLg/h98f23hf9823f.jpg",
-        ],
-      },
+    imgNum: 2,
+    color: ["Gray", "Ivory"],
+    img: [
+      "https://i.ibb.co/j8B1X5M/093j29fj23f23.jpg",
+      "https://i.ibb.co/CB4twK4/gb928hg9238g32.jpg",
+      "https://i.ibb.co/4FbfxWz/gh2389gh2938g.jpg",
+      "https://i.ibb.co/dkT3DLg/h98f23hf9823f.jpg",
     ],
   },
   {
@@ -454,15 +336,12 @@ export const AllProducts = [
     rating: 4.1,
     price: 92.62,
     sizes: ["6'7'x9'", "5'x8'", "3'x5'"],
-    color: [
-      {
-        name: "Gray",
-        img: [
-          "https://i.ibb.co/QbPdhcp/hf923hf9238hf.jpg",
-          "https://i.ibb.co/nnbDrnL/j3049gjf0394g.jpg",
-          "https://i.ibb.co/PWrBXwn/20kv-320v23v.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["Gray"],
+    img: [
+      "https://i.ibb.co/QbPdhcp/hf923hf9238hf.jpg",
+      "https://i.ibb.co/nnbDrnL/j3049gjf0394g.jpg",
+      "https://i.ibb.co/PWrBXwn/20kv-320v23v.jpg",
     ],
   },
   {
@@ -474,15 +353,12 @@ export const AllProducts = [
     rating: 4.6,
     price: 170.99,
     sizes: ["8''x10'", "7'x10'", "6'x9'"],
-    color: [
-      {
-        name: "Navy",
-        img: [
-          "https://i.ibb.co/zmkmjGT/b823bg8723g2.jpg",
-          "https://i.ibb.co/hZzbhNn/fk23-fk2-03fk23.jpg",
-          "https://i.ibb.co/7k6YkTz/n9g2f023j.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["Navy"],
+    img: [
+      "https://i.ibb.co/zmkmjGT/b823bg8723g2.jpg",
+      "https://i.ibb.co/hZzbhNn/fk23-fk2-03fk23.jpg",
+      "https://i.ibb.co/7k6YkTz/n9g2f023j.jpg",
     ],
   },
   {
@@ -494,15 +370,12 @@ export const AllProducts = [
     rating: 4.7,
     price: 1524.49,
     sizes: ["72"],
-    color: [
-      {
-        name: "White",
-        img: [
-          "https://i.ibb.co/KG4S2Dz/ng043g0n34.jpg",
-          "https://i.ibb.co/s9DfD5Z/f09f0293f0923.jpg",
-          "https://i.ibb.co/c1YC3Tc/fn49n9834nfg9384.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["White"],
+    img: [
+      "https://i.ibb.co/KG4S2Dz/ng043g0n34.jpg",
+      "https://i.ibb.co/s9DfD5Z/f09f0293f0923.jpg",
+      "https://i.ibb.co/c1YC3Tc/fn49n9834nfg9384.jpg",
     ],
   },
   {
@@ -514,15 +387,12 @@ export const AllProducts = [
     rating: 4.0,
     price: 53.49,
     sizes: ["1'2"],
-    color: [
-      {
-        name: "Stainless Steel",
-        img: [
-          "https://i.ibb.co/YQ76Bx1/ng984h938gh4.jpg",
-          "https://i.ibb.co/pbWcTDJ/fb2398f9283nf32.jpg",
-          "https://i.ibb.co/YPQ2nMz/ng9843ng893.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["Stainless Steel"],
+    img: [
+      "https://i.ibb.co/YQ76Bx1/ng984h938gh4.jpg",
+      "https://i.ibb.co/pbWcTDJ/fb2398f9283nf32.jpg",
+      "https://i.ibb.co/YPQ2nMz/ng9843ng893.jpg",
     ],
   },
   {
@@ -534,15 +404,12 @@ export const AllProducts = [
     rating: 5.0,
     price: 2259.98,
     sizes: ["59-inch"],
-    color: [
-      {
-        name: "White",
-        img: [
-          "https://i.ibb.co/z55mdq2/nf0923n09f2n3f.jpg",
-          "https://i.ibb.co/WKQCSdc/jg0934jg0394fm.jpg",
-          "https://i.ibb.co/m5Rdymr/fk3240fkj304.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["White"],
+    img: [
+      "https://i.ibb.co/z55mdq2/nf0923n09f2n3f.jpg",
+      "https://i.ibb.co/WKQCSdc/jg0934jg0394fm.jpg",
+      "https://i.ibb.co/m5Rdymr/fk3240fkj304.jpg",
     ],
   },
   {
@@ -554,15 +421,12 @@ export const AllProducts = [
     rating: 4.9,
     price: 84.49,
     sizes: ["20"],
-    color: [
-      {
-        name: "White",
-        img: [
-          "https://i.ibb.co/qNCWHvV/n9384f394fj43.jpg",
-          "https://i.ibb.co/6NRjwsY/fnb982fn23f.jpg",
-          "https://i.ibb.co/FnpN8BK/nf09823n098f23f.jpg",
-        ],
-      },
+    imgNum: 3,
+    color: ["White"],
+    img: [
+      "https://i.ibb.co/qNCWHvV/n9384f394fj43.jpg",
+      "https://i.ibb.co/6NRjwsY/fnb982fn23f.jpg",
+      "https://i.ibb.co/FnpN8BK/nf09823n098f23f.jpg",
     ],
   },
   {
@@ -574,21 +438,13 @@ export const AllProducts = [
     rating: 4.8,
     price: 134.95,
     sizes: [" KPF-3104 - 16 1/4", " KPF-3104 - 16 1/4"],
-    color: [
-      {
-        name: "Stainless Steel",
-        img: [
-          "https://i.ibb.co/kc4CBtJ/fj3209fj23.jpg",
-          "https://i.ibb.co/GVjpWX0/f2039fj0923f23.jpg",
-        ],
-      },
-      {
-        name: "Matte Black",
-        img: [
-          "https://i.ibb.co/Y2YkKZ9/fj92fj0932.jpg",
-          "https://i.ibb.co/GMzWB8F/fn293fn23f.jpg",
-        ],
-      },
+    imgNum: 4,
+    color: ["Stainless Steel", "Matte Black"],
+    img: [
+      "https://i.ibb.co/kc4CBtJ/fj3209fj23.jpg",
+      "https://i.ibb.co/GVjpWX0/f2039fj0923f23.jpg",
+      "https://i.ibb.co/Y2YkKZ9/fj92fj0932.jpg",
+      "https://i.ibb.co/GMzWB8F/fn293fn23f.jpg",
     ],
   },
 ];

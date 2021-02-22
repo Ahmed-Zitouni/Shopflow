@@ -31,7 +31,7 @@ const MainCont = styled.div`
   background: white;
   flex-direction: column;
   line-height: 1.2;
-  padding: ${(props) => (props.type === "HOME" ? "unset" : "0px 24px")};
+  color: ${(props) => props.theme.BoldText};
   @media ${(props) => props.theme.laptop} {
     width: ${(props) => (props.type === "PRODUCT" ? "1000px" : "100%")};
   }

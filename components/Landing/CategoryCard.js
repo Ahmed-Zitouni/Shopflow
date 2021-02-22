@@ -1,27 +1,33 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const CategoryCard = ({ data }) => {
   return (
-    <Wrapper>
-      <Img src={data.img} />
-      <TextCont>
-        <H2>{data.price}</H2>
-        <P>{data.name}</P>
-      </TextCont>
-    </Wrapper>
+    <Link href={data.url} passHref>
+      <Wrapper>
+        <Img src={data.img} />
+        <TextCont>
+          <H2>{data.name}</H2>
+          <P>{data.description}</P>
+        </TextCont>
+      </Wrapper>
+    </Link>
   );
 };
 
 export default CategoryCard;
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
   display: flex;
   justify-content: center;
   flex-direction: column;
   background: ${(props) => props.theme.lightGrey};
   max-width: 100%;
   padding: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 `;
 const Img = styled.img`
   width: 100%;

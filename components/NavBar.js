@@ -91,7 +91,7 @@ const Wrapper = Styled.div`
     background-color:white;
     /* background: green; */
     max-width: 1680px;
-    z-index: 1;
+    z-index: 10;
     /* margin: 0 auto; */
     @media ${(props) => props.theme.tabletL} {
     height: unset;

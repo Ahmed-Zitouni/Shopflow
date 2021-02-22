@@ -1,164 +1,145 @@
-import React,{useState} from "react"
-import styled from "styled-components"
+import React, { useState } from "react";
+import styled from "styled-components";
 
 export default function CartItem({
-    imageURL,
-    productName,
-    color,
-    price,
-    quantity,
-    Productid,
-    updateNums,
-}){
-    const [Quantity,updateQuantity] = useState(quantity)
-    let [removed,updateRemoved] = useState(false); 
+  imageURL,
+  productName,
+  color,
+  price,
+  quantity,
+  Productid,
+  updateNums,
+}) {
+  const [Quantity, updateQuantity] = useState(quantity);
+  const [removed, updateRemoved] = useState(false);
 
-    function handleChange(e){
-        e.preventDefault();
-        //let newVal = parseInt(e.target.options[e.target.options.selectedIndex].value)
-        let newVal = e.target.value
-        console.log(newVal)
-        let id = Productid
-        updateQuantity(newVal)
-        updateNums(newVal,id)
-    }
+  function handleChange(e) {
+    e.preventDefault();
+    //let newVal = parseInt(e.target.options[e.target.options.selectedIndex].value)
+    let newVal = e.target.value;
+    console.log(newVal);
+    let id = Productid;
+    updateQuantity(newVal);
+    updateNums(newVal, id);
+  }
+  //value={{TotalPrice,NumItems}}
 
-    return(
-        <>
-            {!removed &&
-                <Wrapper>
-                    <Container>
-                        <Image src={imageURL}/>
-                        <Product>
-                            <H1>
-                                {productName}
-                            </H1>
-                            <Color>
-                                {color}
-                            </Color>
-                            <Price>
-                                ${(price * quantity).toFixed(2)}
-                            </Price>
-                            <Input type="number" value={Quantity} onChange={(e)=>handleChange(e)} />
-                                
-                            <Remove onClick={()=>updateRemoved(true)}>
-                                Remove
-                            </Remove>
-                        </Product>
-                    </Container>
-                </Wrapper>
-            }
-        </>
-    )
+  //<Input type="number" value={Quantity} onChange={(e)=>upDatePrice(Productid,e.target.value)} />
+  return (
+    <>
+      {!removed && (
+        <Wrapper>
+          <Container>
+            <Image src={imageURL} />
+            <Product>
+              <H1>{productName}</H1>
+              <Color>{color}</Color>
+              <Price>${(price * quantity).toFixed(2)}</Price>
+              <Select value={Quantity} onChange={(e) => handleChange(e)}>
+                <Option value={1}>1</Option>
+                <Option value={2}>2</Option>
+                <Option value={3}>3</Option>
+                <Option value={4}>4</Option>
+                <Option value={5}>5</Option>
+                <Option value={6}>6</Option>
+                <Option value={7}>7</Option>
+                <Option value={8}>8</Option>
+                <Option value={9}>9</Option>
+                <Option value={10}>10</Option>
+              </Select>
+              <Remove onClick={() => updateRemoved(true)}>Remove</Remove>
+            </Product>
+          </Container>
+        </Wrapper>
+      )}
+    </>
+  );
 }
-/*
-    let newVal=Quantity
-    let id = Productid
-    updateNums(newVal,id)
-*/
-
-/* 
-    <Select value={Quantity} onChange={(e)=>handleChange(e)}>
-                                <Option value={1}>
-                                    1
-                                </Option>
-                                <Option value={2}>
-                                    2
-                                </Option>
-                                <Option value={3}>
-                                    3
-                                </Option>
-                                <Option value={4}>
-                                    4
-                                </Option>
-                                <Option value={5}>
-                                    5
-                                </Option>
-                                <Option value={6}>
-                                    6
-                                </Option>
-                                <Option value={7}>
-                                    7
-                                </Option>
-                                <Option value={8}>
-                                    8
-                                </Option>
-                                <Option value={9}>
-                                    9
-                                </Option>
-                                <Option value={10}>
-                                    10
-                                </Option>
-                            </Select>
-*/
-
-export const Wrapper = styled.div`
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:15px;
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
 `;
 
-export const Container = styled.div`
-    width:100%;
-    height:auto;
-    display:flex;
-    justify-content:center;
-    flex-direction:row;
-    border:1px solid #dadcdf;
-    padding:20px;
+const Container = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid #dadcdf;
+  padding: 20px;
+  @media (max-width: 1200px) {
+    width: 75%;
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
-export const Image = styled.img`
-    width:250px;
-    height:250px;
-    margin-right:50px;
+const Image = styled.img`
+  width: 250px;
+  height: 250px;
+  margin-right: 50px;
+  @media (max-width: 1200px) {
+    width: 250px;
+    height: 250px;
+  }
+  @media (max-width: 700px) {
+    width: 125px;
+    height: 125px;
+  }
 `;
 
-export const Product = styled.div`
-    width:50%;
+const Product = styled.div`
+  width: 50%;
 `;
 
-export const H1 = styled.h1`
-    font-family:Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    color: #2f3337;
-    padding-bottom:15px;
+const H1 = styled.h1`
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #2f3337;
+  padding-bottom: 15px;
 `;
 
-export const Color = styled.div`
-    font-family:Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    color: #2f3337;
-    padding-bottom:15px;
+const Color = styled.div`
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #2f3337;
+  padding-bottom: 15px;
 `;
 
-export const Price = styled.div`
-    font-weight:700;
-    font-family:Helvetica,Arial,sans-serif;
-    font-size: 20px;
-    padding-bottom:15px;
-`;
-//export const Select = styled.select`
-export const Input = styled.input`
-    background: transparent!important;
-    border: 1px solid #e7e8ea;
-    padding-bottom: 1px;
-    padding-left: 10px;
-    height: 34px;
-    width:40%;
-    border-radius: 4px;
-    margin-bottom:75px;
+const Price = styled.div`
+  font-weight: 700;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  padding-bottom: 15px;
 `;
 
-export const Option = styled.option`
-    
+const Select = styled.select`
+  background: transparent !important;
+  border: 1px solid #e7e8ea;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  height: 34px;
+  width: 40%;
+  border-radius: 4px;
+  margin-bottom: 75px;
+  @media (max-width: 500px) {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding: none;
+    width: 60%;
+  }
 `;
 
-export const Remove = styled.div`
-    color: #2f3337;
-    text-decoration: underline;
-    cursor:pointer;
+const Option = styled.option``;
+
+const Remove = styled.div`
+  color: #2f3337;
+  text-decoration: underline;
+  cursor: pointer;
 `;

@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const SaleCard = ({ data, mb, last }) => {
   return (
-    <Wrapper mb={mb} last={last}>
-      <ImgCont>
-        <Img src={data.img} />
-      </ImgCont>
-    </Wrapper>
+    <Link href={"/category"} passHref>
+      <Wrapper mb={mb} last={last}>
+        <ImgCont>
+          <Img src={data.img} />
+        </ImgCont>
+      </Wrapper>
+    </Link>
   );
 };
 
@@ -27,6 +30,7 @@ const Wrapper = styled.a`
   @media ${(props) => props.theme.tablet} {
     width: 33.3%;
     margin-bottom: 0px;
+    margin: 0px 16px;
   }
 `;
 const ImgCont = styled.div`

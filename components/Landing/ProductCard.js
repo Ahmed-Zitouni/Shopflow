@@ -1,25 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const ProductCard = ({ data }) => {
   return (
-    <Wrapper>
-      <Img src={data.img} />
-      <TextCont>
-        <H2>{data.price}</H2>
-        <P>{data.name}</P>
-      </TextCont>
-    </Wrapper>
+    <Link href={"/category/" + data.id} passHref>
+      <Wrapper>
+        <Img src={data.img[0]} />
+        <TextCont>
+          <H2>${data.price}</H2>
+          <P>{data.name}</P>
+        </TextCont>
+      </Wrapper>
+    </Link>
   );
 };
 
 export default ProductCard;
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
   display: flex;
   justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   width: 100%;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 `;
 const Img = styled.img`
   width: 100%;
@@ -33,7 +40,7 @@ const H2 = styled.h2`
   color: ${(props) => props.theme.redText};
 `;
 const P = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
 `;
 const TextCont = styled.div`
