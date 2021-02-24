@@ -2,17 +2,12 @@ import React, { useState, useEffect } from "react";
 import Styled from "styled-components";
 import { BiSearch } from "react-icons/bi";
 import Dropdown from "./Dropdown";
-
+import { AllProducts } from "../../data/Category";
 export default function SearchBar() {
   const [search, setSearch] = useState("");
   const [focused, setFocused] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
-  const data = [
-    { name: "Sofa" },
-    { name: "Couch" },
-    { name: "Sleeper Sofa" },
-    { name: "Pillow" },
-  ];
+  const data = AllProducts.map((info) => ({ name: info.name, id: info.id }));
 
   const onTyping = (value) => {
     setSearch(value);

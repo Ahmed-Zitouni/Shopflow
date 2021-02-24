@@ -16,8 +16,6 @@ const Wrapper = Styled.a`
   width: 100%;
     justify-content: space-between;
     align-items: center;
-    /* padding-left: 25px;
-    padding-right: 25px; */
     border-bottom: 1px solid #dadcdf;
     background-color: #f9fafb;
     font-weight: 500;

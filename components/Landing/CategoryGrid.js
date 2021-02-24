@@ -45,10 +45,13 @@ const CategoryGrid = ({ type, data }) => {
     <Wrapper>
       <MainCont>
         {type === "SHOPNOW" &&
-          data.map((info) => <ShopNowCard data={info} mb={"50px"} />)}
+          data.map((info) => (
+            <ShopNowCard key={info.id} data={info} mb={"50px"} />
+          ))}
         {type === "SALE" &&
           saleData.map((info, i) => (
             <SaleCard
+              key={info.url}
               data={info}
               mb={"10px"}
               last={i === saleData.length - 1}
