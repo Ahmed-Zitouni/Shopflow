@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage, useFormik } from "formik";
 import styled from "styled-components";
 import swal from "sweetalert";
@@ -6,6 +6,10 @@ import { useRouter } from "next/router";
 
 export default function CheckoutForm() {
   const router = useRouter();
+
+  let scrollRef = useRef();
+
+  const [Display, setDisplay] = useState(false);
 
   const StatesUS = new Set([
     "AL",
@@ -128,10 +132,12 @@ export default function CheckoutForm() {
       parseFloat(formik.values.CVV.length) > 2
     )
       return true;
-    else return false;
+    else {
+      return false;
+    }
   }
   return (
-    <Wrapper>
+    <Wrapper id="wrap">
       <Checkout_Form
         id="my-form"
         onSubmit={(e) => {
@@ -143,12 +149,19 @@ export default function CheckoutForm() {
               title: "Successful Purchase",
               text: "Thank You For Shopping With Us",
             }).then((x) => {
+              localStorage.removeItem("Cart");
               router.push("/");
+            });
+          } else {
+            setDisplay(true);
+            window.scrollTo({
+              behavior: "smooth",
+              top: scrollRef.current.offsetTop,
             });
           }
         }}
       >
-        <H1Div>
+        <H1Div ref={scrollRef}>
           <H1> Billing Address </H1>
           <Button
             type="reset"
@@ -158,22 +171,30 @@ export default function CheckoutForm() {
                   email: "johnsmith@email.com",
                   first_name: "John",
                   last_name: "Smith",
-                  address: "123 Street St.",
+                  address: "123 Street",
                   country: "United States",
                   zip: "12345",
-                  city: "City",
-                  state: "NJ",
+                  city: "New York",
+                  state: "NY",
                   CC: "1234567887654321",
                   CVV: "123",
                   month: "01",
                   year: "2021",
                 },
               });
+              setDisplay(false);
             }}
           >
             Autofill
           </Button>
         </H1Div>
+        <Row>
+          {Display && (
+            <SubmitError id="scroll">
+              PLEASE FILL IN ALL FIELDS BEFORE SUBMITTING
+            </SubmitError>
+          )}
+        </Row>
         <Row>
           <FullDiv>
             <Full>Email Address</Full>
@@ -409,7 +430,7 @@ export default function CheckoutForm() {
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  margin-bottom: 250px;
+  margin-bottom: 100px;
 `;
 const Checkout_Form = styled.form`
   width: 100%;
@@ -481,7 +502,7 @@ const Input__Half = styled.input`
   padding: 7px;
   background: #fff;
   color: #7b7b7b;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid #d5d7d8;
   border-radius: 3px;
   outline: 0;
@@ -587,6 +608,12 @@ const ErrorDiv = styled.div`
   font-weight: 400;
   color: red;
   font-size: 12px;
+`;
+const SubmitError = styled.div`
+  font-family: helvetica;
+  font-weight: 400;
+  color: red;
+  font-size: 15px;
 `;
 const DateSelect = styled.select`
   width: 20%;

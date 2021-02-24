@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { BsLock } from "react-icons/bs";
 import CheckoutForm from "./CheckoutForm";
 import CartItem from "./CartItem";
 import swal from "sweetalert";
@@ -97,7 +98,7 @@ export default function CheckoutContent() {
                   <Large>${(TotalPrice * 0.1 + TotalPrice).toFixed(2)}</Large>
                 </Row>
                 <Button form="my-form" type="submit">
-                  Submit Order
+                  <BsLock /> <P>Submit Order</P>
                 </Button>
               </Bottom>
             </Checkout>
@@ -239,10 +240,17 @@ const Button = styled.button`
   padding: 0 20px;
   border: none;
   margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 `;
 const Large = styled.h1`
   font-size: 22px;
   color: #2f3337;
   line-height: 1.5;
   font-weight: bold;
+`;
+const P = styled.p`
+  padding-left: 5px;
 `;

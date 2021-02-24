@@ -83,7 +83,7 @@ export default function home() {
           img="https://i.ibb.co/zX5km9T/021521-Rugs-Promo-Desktop.jpg"
           url="/category?type=Rugs"
           title="Rug Refresh"
-          text="Out with the old - in with the savings"
+          text="Out with the old"
         />
         <CategoryGrid type={"SHOPNOW"} data={grid2} />
         <CategoryGrid type={"SALE"} />

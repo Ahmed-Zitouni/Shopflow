@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <Container>
-      <UpperHalf>
-        <Col1>
-          <Desc>
+    <Wrapper>
+      <Container>
+        <UpperHalf>
+          <Col1>
             <H2>O.com®</H2>
             <P>
               Shop Overstock.com and find the best online deals on everything
@@ -15,62 +15,67 @@ const Footer = () => {
               memorable gifts or everyday essentials, you can buy them here for
               less.
             </P>
-          </Desc>
-        </Col1>
-        <Col2>
-          <InnerDiv1>
-            <H1>We Save People Money®</H1>
-            <H1>All Things Home All For Less™</H1>
-            <H1>Shop Social®</H1>
-            <H1>Daily Dig®</H1>
-          </InnerDiv1>
-          <InnerDiv2>
-            <H1>Trusted Merchant®</H1>
-            <H1>O is the One®</H1>
-            <H1>O’®</H1>
-            <H1>Presa®</H1>
-          </InnerDiv2>
-        </Col2>
-      </UpperHalf>
-      <LowerHalf>
-        <Div>© Copyright 2021, Overstock Inc. All Rights Reserved</Div>
-        <Div></Div>
-      </LowerHalf>
-    </Container>
+          </Col1>
+          <Col2>
+            <InnerDiv1>
+              <H1>We Save People Money®</H1>
+              <H1>All Things Home All For Less™</H1>
+              <H1>Shop Social®</H1>
+              <H1>Daily Dig®</H1>
+            </InnerDiv1>
+            <InnerDiv2>
+              <H1>Trusted Merchant®</H1>
+              <H1>O is the One®</H1>
+              <H1>O’®</H1>
+              <H1>Presa®</H1>
+            </InnerDiv2>
+          </Col2>
+        </UpperHalf>
+        <LowerHalf>
+          © Copyright 2021, Overstock Inc. All Rights Reserved
+        </LowerHalf>
+      </Container>
+    </Wrapper>
   );
 };
 export default Footer;
 
-const Container = styled.div`
+const Wrapper = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
   background-color: #444;
   flex-direction: column;
   color: white;
+  line-height: 1.2;
+`;
+const Container = styled.div`
+  justify-content: space-between;
+  margin: 60px 25px;
+  height: 100%;
+  flex-direction: column;
+  @media ${(props) => props.theme.tablet} {
+    margin: 60px 105px;
+  }
 `;
 const UpperHalf = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
-  @media (max-width: 1200px) {
-    flex-direction: column;
+  flex-direction: column;
+  @media ${(props) => props.theme.tablet} {
+    flex-direction: row;
   }
 `;
 const Col1 = styled.div`
-  width: 50%;
+  width: 100%;
+  flex-direction: column;
   display: flex;
-  @media (max-width: 1200px) {
-    width: 100%;
+  margin-bottom: 30px;
+  @media ${(props) => props.theme.tablet} {
+    width: 47%;
+    margin-bottom: 0px;
   }
-`;
-const Desc = styled.div`
-  padding: 25px 75px;
 `;
 const H2 = styled.h2`
   font-size: 20px;
-  line-height: 1.2;
   font-family: Helvetica, Arial, sans-serif;
   margin-bottom: 12px;
 `;
@@ -80,41 +85,35 @@ const P = styled.p`
   width: 70%;
 `;
 const Col2 = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  @media (max-width: 1200px) {
-    width: 100%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  @media ${(props) => props.theme.tablet} {
+    width: 50%;
+    margin-bottom: 0px;
   }
 `;
 const InnerDiv1 = styled.div`
-  width: 50%;
+  width: 47%;
   display: flex;
   flex-direction: column;
-  padding: 25px;
 `;
 const InnerDiv2 = styled.div`
-  width: 50%;
+  width: 47%;
   display: flex;
   flex-direction: column;
-  padding: 25px;
 `;
 const H1 = styled.h1`
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 16px;
 `;
-const LowerHalf = styled.div`
-  width: 100%;
+const LowerHalf = styled.h2`
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
   background-color: #444;
   color: white;
-`;
-const Div = styled.div`
-  padding: 25px;
-`;
-const A = styled.a`
-  padding: 0 25px;
+  font-size: 16px;
 `;
