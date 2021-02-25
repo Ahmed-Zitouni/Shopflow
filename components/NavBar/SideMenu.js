@@ -7,7 +7,7 @@ export default function SideMenu(props) {
     <Wrapper open={props.isOpen}>
       <MenuContainer open={props.isOpen}>
         <LogoRow onClick={() => props.onClose()}>
-          <Logo src="/Overstock_WhiteIcon.svg" />
+          <Logo src="/ShopflowWhite.svg" />
         </LogoRow>
         <TitleRow>Categories</TitleRow>
         <MenuItem name="Bed & Bath" href="/category?type=BedNBath" />

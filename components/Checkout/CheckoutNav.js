@@ -8,8 +8,8 @@ export default function CheckoutNav() {
     <Wrapper>
       <Link href="/" passHref>
         <LogoTag>
-          <SmallLogo src={"/Overstock_Icon.svg"} />
-          <Logo src={"/Overstock_Logo.svg"} />
+          <SmallLogo src={"/ShopflowSmall.svg"} />
+          <Logo src={"/ShopflowLogo.svg"} />
         </LogoTag>
       </Link>
       <Checkout>
