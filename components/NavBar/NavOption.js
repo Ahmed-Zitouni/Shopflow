@@ -59,7 +59,9 @@ export default function NavOption({ type, isTablet, isMobile, url }) {
           ) : type === "cart" ? null : (
             <>
               <HoverTitle>5% Rewards on Every Purchase</HoverTitle>
-              <Button>See All Sales</Button>
+              <Link href="/category" passHref>
+                <Button>See All Sales</Button>
+              </Link>
             </>
           )}
         </DropDownDiv>
